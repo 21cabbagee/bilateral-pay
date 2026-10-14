@@ -9,6 +9,7 @@
   }
 }
 
+/* Glassmorphism & Modern Aesthetics (Styles Refero & Kokonut UI) */
 .glass-card {
   background: rgba(15, 23, 42, 0.75);
   backdrop-filter: blur(16px);
@@ -16,6 +17,44 @@
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
+.glass-card-hover {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card-hover:hover {
+  transform: translateY(-2px);
+  border-color: rgba(16, 185, 129, 0.4);
+  box-shadow: 0 12px 30px -10px rgba(16, 185, 129, 0.2);
+}
+
 .glow-emerald {
   box-shadow: 0 0 35px -5px rgba(16, 185, 129, 0.25);
+}
+
+/* Kokonut UI Animated Shimmer Border */
+@keyframes borderBeam {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.border-beam-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.border-beam {
+  position: absolute;
+  inset: -150%;
+  background: conic-gradient(from 0deg, transparent 0 340deg, rgba(16, 185, 129, 0.8) 360deg);
+  animation: borderBeam 4s linear infinite;
+}
+
+.border-beam-inner {
+  position: relative;
+  border-radius: inherit;
+  background: #090d16;
 }
